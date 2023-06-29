@@ -58,14 +58,24 @@ end entity;
 ```
 entity encoder4x2 is
     port(I: in std_logic_vector (3 downto 0);
-    Y: out std_logic_vector(1 downto 0);
+    Y: out std_logic_vector(1 downto 0));
 end entity;
 ```
 
-Please make sure you use this exact naming convention for entities as well as ports
+Please make sure you use this exact naming convention for entities as well as ports.
+
+## Question 2 (30 marks)
+In this question you'll be designing a 4x16 decoder using 2x4 decoders. Once again this must be designed without sequential coding of any sorts. The goal is to modularize your code as much as possible. Use the following entity definition. 
+```
+entity decoder4x16 is
+    port(a, b, c, d, enable: in std_logic;
+    dec: out std_logic_vector(15 downto 0));
+end entity;
+```
+Write a testbench for the same showcasing all 16 decodes.
 
 ## Question 3 (50 marks)
-In this question we will be designing a musical chord encoder. It converts individual notes of either a three note or a four note chord into its chord name. The circuit receives a fresh byte every posisitve transition of an external clock cycle. Every note is either one or two bytes represented by its name in ascii (for example G is 01000111 as ASCII for G is 71) followed by either a sharp (ascii 31 for #) or a flat (we'll use the ascii for the small letter, for example A flat is "a" which is 01100001).
+In this question you will be designing a musical chord encoder. It converts individual notes of either a three note or a four note chord into its chord name. The circuit receives a fresh byte every posisitve transition of an external clock cycle. Every note is either one or two bytes represented by its name in ascii (for example G is 01000111 as ASCII for G is 71) followed by either a sharp (ascii 31 for #) or a flat (we'll use the ascii for the small letter, for example A flat is "a" which is 01100001).
 
 For reference, this is the order of notes
 
@@ -98,9 +108,9 @@ and follow cyclically.</br> In essence, the sharp of a note is the flat of the n
           01001101
           ```
           Because C# is d. Note that 01001101 is M which stands for major.
-        - Similarly minor chords print small m after the note
-        - Suspended chords print a small s after the note
-        - Dominant 7th print the ASCII value of 7 after the note (which is 55)
+        - Similarly for minor chords print a small m after the note
+        - For suspended chords print a small s after the note
+        - For dominant 7ths print the ASCII value of 7 after the note (which is 55)
 
 
 **Need for a buffer** : Fresh data is inputted at every rising edge of the clock. You will need to wait to see what the chord is for atleast 2 clock cycles before coming to a conclusion on the chord name. Since the output data rate may be less than or equal to or greater than the input data rate over short periods, provision must be made for buffering the input data and providing a data valid output line which becomes 1 in a clock cycle in which valid data is being output. Decide on a safe buffer size based on the constraints of the input file size mentioned above (Another approach is that you can choose whatever buffer size you want but then there should be a mechanism in your circuit for handling the situation when the buffer gets full).
@@ -126,16 +136,34 @@ entity CHORD_Encoder is
     	z: out std_logic_vector(7 downto 0));
 end entity;
 ```
+REPORT?
+
+Place the input and output files in the same directory as the vhdl files. Read input from the file: test.txt and write output to the file: out.txt (that is, do not change the input and output file names and positions)
+
+If you are using ghdl, you will need to add the -fsynopsys option while compiling. We will verify your output using the command ```diff -Bw true_output.txt out.txt```
+
+Further, for Q3, note that the input may get processed completely whilst your output has not been completed yet. In that case you need to pump extra clock ticks to get the complete output. We will run the simulation for 1000 ns.
+
+
+## Important Notes
+- You are not to use sequential coding anywhere other than the testbenches in Q1 and Q2
+- You should use sequential coding in Q3
+- Q1 will have binary grading. Q2 will be graded based on how modularized your code is. Q3 will be graded on the code and the report.
+
 ## Submission
 ```
 roll_number
 ├── Q1
     ├── and.vhd  and_tb.vhd  or.vhd  or_tb.vhd not.vhd  not_tb.vhd  and_wave.jpg  or_wave.jpg not_wave.jpg  mux4x2.vhd  enc4x2.vhd  mux4x2_tb.vhd enc4x2_tb.vhd mux4x2_wave.jpg enc4x2_wave.jpg
 ├── Q2
-    ├── 
+    ├── decoder4x16.vhd  tb.vhd  wave.jpg  *.vhd
 ├── Q3
     ├── CHORD.vhd  tb.vhd  wave.jpg report.pdf  *.vhd
 
 ```
+Compress this directory using</br>
+` zip -r roll_number.zip roll_number` and submit roll_number.zip. </br>
+__Incorrect submission formats will result in NO marks.__
+
 
 
