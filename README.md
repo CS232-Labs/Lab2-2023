@@ -62,7 +62,7 @@ entity encoder4x2 is
 end entity;
 ```
 
-Please make sure you use this exact naming convention for entities as well as ports.
+(Please) make sure you use this exact naming convention for entities as well as ports!
 
 ## Question 2 (30 marks)
 In this question you'll be designing a 4x16 decoder using 2x4 decoders. Once again this must be designed without sequential coding of any sorts. The goal is to modularize your code as much as possible. Use the following entity definition. 
@@ -136,7 +136,6 @@ entity CHORD_Encoder is
     	z: out std_logic_vector(7 downto 0));
 end entity;
 ```
-REPORT?
 
 Place the input and output files in the same directory as the vhdl files. Read input from the file: test.txt and write output to the file: out.txt (that is, do not change the input and output file names and positions)
 
@@ -158,7 +157,7 @@ roll_number
 ├── Q2
     ├── decoder4x16.vhd  tb.vhd  wave.jpg  *.vhd
 ├── Q3
-    ├── CHORD.vhd  tb.vhd  wave.jpg report.pdf  *.vhd
+    ├── CHORD.vhd  tb.vhd  wave.jpg  *.vhd
 
 ```
 Compress this directory using</br>
