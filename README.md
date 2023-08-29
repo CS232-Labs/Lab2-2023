@@ -25,7 +25,7 @@ Here is a [link](https://youtube.com/playlist?list=PLw6vmiIQrilSa4Xznu9Zh1ag3klX
 ## Question 1 (20 marks)
 a) Design basic 2-input logic gates in VHDL. Define their entity and architecture. The gates which you have to code are: AND, OR & NOT. Generate a wave-form for the inputs and outputs using a simulation tool (modelsim or GTKWave). Take a screenshot of the wave-form.
 
-b) Design a 4 x 2 multiplexer and a 4 x 2 encoder using the basic gates that you have designed above. Do not use the built-in keywords ‘and’, ‘or’, ‘not’ etc. You must use your designed basic gates in part a) as components. Generate a wave-form for the inputs and outputs using a simulation tool (modelsim or GTKWave). Take a screenshot of the waveform.
+b) Design a 4 x 1 multiplexer and a 4 x 2 encoder using the basic gates that you have designed above. Do not use the built-in keywords ‘and’, ‘or’, ‘not’ etc. You must use your designed basic gates in part a) as components. Generate a wave-form for the inputs and outputs using a simulation tool (modelsim or GTKWave). Take a screenshot of the waveform.
 
 Use the following entity definitions:
 ```
@@ -49,7 +49,7 @@ entity NOT_Gate is
 end entity;
 ```
 ```
-entity mux4x2 is
+entity mux4x1 is
     port(D: in std_logic_vector (3 downto 0);
     S: in std_logic_vector(1 downto 0);
     Y: out std_logic);
@@ -153,7 +153,7 @@ Further, for Q3, note that the input may get processed completely whilst your ou
 ```
 roll_number
 ├── Q1
-    ├── and.vhd  and_tb.vhd  or.vhd  or_tb.vhd not.vhd  not_tb.vhd  and_wave.jpg  or_wave.jpg not_wave.jpg  mux4x2.vhd  enc4x2.vhd  mux4x2_tb.vhd enc4x2_tb.vhd mux4x2_wave.jpg enc4x2_wave.jpg
+    ├── and.vhd  and_tb.vhd  or.vhd  or_tb.vhd not.vhd  not_tb.vhd  and_wave.jpg  or_wave.jpg not_wave.jpg  mux4x1.vhd  enc4x2.vhd  mux4x1_tb.vhd enc4x2_tb.vhd mux4x1_wave.jpg enc4x2_wave.jpg
 ├── Q2
     ├── decoder4x16.vhd  tb.vhd  wave.jpg  *.vhd
 ├── Q3
