@@ -25,7 +25,7 @@ Here is a [link](https://youtube.com/playlist?list=PLw6vmiIQrilSa4Xznu9Zh1ag3klX
 ## Question 1 (20 marks)
 a) Design basic 2-input logic gates in VHDL. Define their entity and architecture. The gates which you have to code are: AND, OR & NOT. Generate a wave-form for the inputs and outputs using a simulation tool (modelsim or GTKWave). Take a screenshot of the wave-form.
 
-b) Design a 4 x 1 multiplexer and a 4 x 2 encoder using the basic gates that you have designed above. Do not use the built-in keywords ‘and’, ‘or’, ‘not’ etc. You must use your designed basic gates in part a) as components. Generate a wave-form for the inputs and outputs using a simulation tool (modelsim or GTKWave). Take a screenshot of the waveform.
+b) Design a 4 x 2 multiplexer and a 4 x 2 encoder using the basic gates that you have designed above. Do not use the built-in keywords ‘and’, ‘or’, ‘not’ etc. You must use your designed basic gates in part a) as components. Generate a wave-form for the inputs and outputs using a simulation tool (modelsim or GTKWave). Take a screenshot of the waveform.
 
 Use the following entity definitions:
 ```
@@ -49,7 +49,7 @@ entity NOT_Gate is
 end entity;
 ```
 ```
-entity mux4x1 is
+entity mux4x2 is
     port(D: in std_logic_vector (3 downto 0);
     S: in std_logic_vector(1 downto 0);
     Y: out std_logic);
@@ -87,7 +87,7 @@ and follow cyclically.</br> In essence, the sharp of a note is the flat of the n
     - Major triads (M) are formed by a key, followed by the 4th note after it, followed by the third one after that. For example, C M is formed by C, E and G. F# M is formed by F#, A# and C#.
     - Minor triads (m) are formed by a key, followed by the third note after it, followed by the fourth note after that. For example C m is formed by C, e, G. b m is formed by b, C# and F.
     - Suspended triads (s) are formed by a key, followed by the 5th note after it, followed by the 2nd note after that. For example, C s is formed by C, F and G. g s is formed by g, B and C#.
-    - 7ths, also called dominant 7ths (7) are formed by a major triad plus the third note after the last note of the major. For example, C 7 is formed by C, F, G and A#. e 7  is formed by e, G, b and d.
+    - 7ths, also called dominant 7ths (7) are formed by a major triad plus the third note after the last note of the major. For example, C 7 is formed by C, E, G and A#. e 7  is formed by e, G, b and d.
 - The circuit will read an input file and output to an output file. The reading and writing has been done in the testbench given. You can modify it as per your needs. 
 - The input file will have the following constraints:
     - Each line will be an 8 bit binary number representing a note or a part of it as mentioned above. 
@@ -147,13 +147,13 @@ Further, for Q3, note that the input may get processed completely whilst your ou
 ## Important Notes
 - You are not to use sequential coding anywhere other than the testbenches in Q1 and Q2
 - You should use sequential coding in Q3
-- Q1 will have binary grading. Q2 will be graded based on how modularized your code is. Q3 will be graded on the code.
+- Q1 will have binary grading. Q2 will be graded based on how modularized your code is. Q3 will be graded on the code and the report.
 
 ## Submission
 ```
 roll_number
 ├── Q1
-    ├── and.vhd  and_tb.vhd  or.vhd  or_tb.vhd not.vhd  not_tb.vhd  and_wave.jpg  or_wave.jpg not_wave.jpg  mux4x1.vhd  enc4x2.vhd  mux4x1_tb.vhd enc4x2_tb.vhd mux4x1_wave.jpg enc4x2_wave.jpg
+    ├── and.vhd  and_tb.vhd  or.vhd  or_tb.vhd not.vhd  not_tb.vhd  and_wave.jpg  or_wave.jpg not_wave.jpg  mux4x2.vhd  enc4x2.vhd  mux4x2_tb.vhd enc4x2_tb.vhd mux4x2_wave.jpg enc4x2_wave.jpg
 ├── Q2
     ├── decoder4x16.vhd  tb.vhd  wave.jpg  *.vhd
 ├── Q3
