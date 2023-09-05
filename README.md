@@ -147,7 +147,7 @@ Further, for Q3, note that the input may get processed completely whilst your ou
 ## Important Notes
 - You are not to use sequential coding anywhere other than the testbenches in Q1 and Q2
 - You should use sequential coding in Q3
-- Q1 will have binary grading. Q2 will be graded based on how modularized your code is. Q3 will be graded on the code and the report.
+- Q1 will have binary grading. Q2 will be graded based on how modularized your code is. Q3 will be graded on the code.
 
 ## Submission
 ```
