@@ -129,7 +129,7 @@ In such cases, the second one is correct because you are to complete a dominant 
 
 Use the following entity definition:
 ```
-entity CHORD_Encoder is
+entity CHORDEncoder is
     	port(clk, rst: in std_logic;
     	a: in std_logic_vector(7 downto 0);
     	data_valid: out std_logic;
@@ -157,7 +157,7 @@ roll_number
 ├── Q2
     ├── decoder4x16.vhd  tb.vhd  wave.jpg  *.vhd
 ├── Q3
-    ├── CHORD.vhd  tb.vhd  wave.jpg  *.vhd
+    ├── CHORD.vhd  tb.vhd  *.vhd
 
 ```
 Compress this directory using</br>
