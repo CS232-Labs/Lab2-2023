@@ -150,18 +150,22 @@ Further, for Q3, note that the input may get processed completely whilst your ou
 - Q1 will have binary grading. Q2 will be graded based on how modularized your code is. Q3 will be graded on the code and how many testcases it passes. There will be vivas for some or all questions.
 
 ## Submission
-```
-roll_number
-├── Q1
-    ├── and.vhd  and_tb.vhd  or.vhd  or_tb.vhd not.vhd  not_tb.vhd  and_wave.jpg  or_wave.jpg not_wave.jpg  mux4x1.vhd  enc4x2.vhd  mux4x1_tb.vhd enc4x2_tb.vhd mux4x1_wave.jpg enc4x2_wave.jpg
-├── Q2
-    ├── decoder4x16.vhd  tb.vhd  wave.jpg  *.vhd
-├── Q3
-    ├── CHORD.vhd  tb.vhd  *.vhd
+Every file corresponding to Question-1 should be appended with `q1_` as prefix. Question-2 files with `q2_` and Question-3 files with `q3_` as prefix
 
 ```
+<roll_number>
+├── q1_and.vhd  q1_and_tb.vhd  q1_or.vhd  q1_or_tb.vhd q1_not.vhd   q1_not_tb.vhd  q1_and_wave.jpg  q1_or_wave.jpg q1_not_wave.jpg  q1_mux4x1.vhd  q1_enc4x2.vhd  q1_mux4x1_tb.vhd q1_enc4x2_tb.vhd q1_mux4x1_wave.jpg q1_enc4x2_wave.jpg
+├── q2_decoder4x16.vhd  q2_tb.vhd  q2_wave.jpg  q2_*.vhd
+├── q3_CHORD.vhd  q3_tb.vhd  q3_*.vhd
+
+```
+
+Note that all the files are under a single directory named `<roll_number>`
+
+Make sure your file names and entity names match exactly as specified in the problem statement
+
 Compress this directory using</br>
-` zip -r roll_number.zip roll_number` and submit roll_number.zip. </br>
+` zip -r <roll_number>.zip <roll_number>` and submit `<roll_number>.zip` on BodhiTree </br>
 __Incorrect submission formats will result in NO marks.__
 
 
