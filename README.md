@@ -79,7 +79,7 @@ In this question you will be designing a musical chord encoder. It converts indi
 
 For reference, this is the order of notes
 
-C, C# = d, D, D# = e, E = f, F, F# = g, G, G# = a, A, A# = b, B = c, B# = C
+C, C# = d, D, D# = e, E = f, E# = F, F# = g, G, G# = a, A, A# = b, B = c, B# = C
 and follow cyclically.</br> In essence, the sharp of a note is the flat of the next one with the exception of E and B and similarly a flat is the sharp of a predecessor with the exception of f and c. So we will be using these interchangably. 
 
 - We'll encode 4 types chords: majors, minors and suspended triads as well as 7th chords
